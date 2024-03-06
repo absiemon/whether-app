@@ -21,6 +21,10 @@ app.use(cors());
 
 app.use('/api', router);
 
+app.use('/run/server', (req, res)=>{
+  return res.json({message:"Server is successfully running!!"})
+})
+
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
