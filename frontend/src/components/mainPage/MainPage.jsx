@@ -144,6 +144,12 @@ const MainPage = () => {
     });
   };
 
+  const clearCache = ()=>{
+    localStorage.removeItem('weather_data_ds_eficode')
+    localStorage.removeItem('city')
+    localStorage.removeItem('units')
+    window.location.reload()
+  }
 
   return (
     <div className='main-container'>
@@ -189,6 +195,12 @@ const MainPage = () => {
           <option value="metric">Celsius</option>
           <option value="imperial">Fahrenheit</option>
         </select>
+
+        <button className='btn-search'
+            onClick={() => clearCache()}
+          >
+          Clear cache
+        </button>
 
       </div>
       {/* scrollable city cards component */}

@@ -1,13 +1,14 @@
+import dotenv from 'dotenv';
+dotenv.config();
 import express from 'express';
 const router = express.Router();
 
 import axios from 'axios'
 
-const appId = process.env.APPID || '22313e921b28d2559ab79166c0f9b6d2';
+const appId = process.env.OPENWHETHER_APPID;
 const mapURI =
   process.env.MAP_ENDPOINT || 'http://api.openweathermap.org/data/2.5';
-const targetCity = process.env.TARGET_CITY || 'Helsinki,fi';
-
+const targetCity = process.env.TARGET_CITY || 'Delhi';
 
 router.get('/weatherbycity', async (req, res) => {
     const { city, units } = req.query;
