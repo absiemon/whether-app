@@ -26,10 +26,13 @@ const MainPage = () => {
       const item = localStorage.getItem('weather_data_ds_eficode');
       const city = localStorage.getItem('city')
 
+      console.log(city)
+      console.log(typeof(city))
+
       if (item !== undefined) {
         setWeatherData(JSON.parse(item));
       }
-      if(city !== undefined){
+      if(city !== undefined && city !== 'null'){
         setCityName(city)
       }
       setFirstLoad(false);
