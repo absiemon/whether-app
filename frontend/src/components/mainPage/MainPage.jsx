@@ -71,7 +71,7 @@ const MainPage = () => {
 
     setError(false)
     setErrorMsg('')
-    await axios.get(`http://localhost:9000/api/weatherbycity?city=${cityName}&units=${selectedUnit}`)
+    await axios.get(`https://whether-app-server.onrender.com/api/weatherbycity?city=${cityName}&units=${selectedUnit}`)
       .then((response) => {
         const data = response?.data
         if (data?.length === 0) {
@@ -95,7 +95,7 @@ const MainPage = () => {
 
     setLoading(true)
 
-    await axios.get(`http://localhost:9000/api/weatherbycoordinates?lon=${lon}&lat=${lat}&units=${selectedUnit}`)
+    await axios.get(`https://whether-app-server.onrender.com/api/weatherbycoordinates?lon=${lon}&lat=${lat}&units=${selectedUnit}`)
       .then((response) => {
         const data = response?.data
         if (data?.length === 0) {
